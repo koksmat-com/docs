@@ -217,7 +217,7 @@ Write-Host 'Hello, this is code.'
 "@
 
     foreach ($var in $envVars) {
-      $markdownTable += "| $var |\n"
+      $markdownTable += "| $var |`n"
     }
 
     # Add the markdown table as a new markdown segment

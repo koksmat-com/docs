@@ -6,7 +6,7 @@ on:
       organisation:
         description: "Organisation"
         required: true
-        default: "nexi-intra"
+        default: "koksmat-com"
       repo:
         description: "Repo"
         required: true

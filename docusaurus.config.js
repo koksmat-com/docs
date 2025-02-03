@@ -19,7 +19,7 @@ const config = {
   markdown: {
     mermaid: true,
   },
-  themes: ["@docusaurus/theme-mermaid","docusaurus-theme-openapi-docs"],
+  themes: ["@docusaurus/theme-mermaid", "docusaurus-theme-openapi-docs"],
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
   organizationName: "koksmat-com", // Usually your GitHub org/user name.
@@ -42,7 +42,7 @@ const config = {
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
         docs: {
-          sidebarPath: require.resolve("./sidebars.js"),
+          sidebarPath: require.resolve("./sidebars.ts"),
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
@@ -53,7 +53,7 @@ const config = {
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-          "https://github.com/koksmat-com/docs/tree/master",
+            "https://github.com/koksmat-com/docs/tree/master",
         },
         theme: {
           customCss: require.resolve("./src/css/custom.css"),
@@ -67,7 +67,7 @@ const config = {
     ({
 
       mermaid: {
-        theme: {light: 'neutral', dark: 'forest'},
+        theme: { light: 'neutral', dark: 'forest' },
       },
       // Replace with your project's social card
       image: "img/koksmat-social.png",
@@ -79,11 +79,12 @@ const config = {
         title: "KOKSMAT",
         items: [
 
-          // { to: "/blog", label: "Blog", position: "left" },
-           { to: "/docs/repo", label: "Repositories", position: "left" },
-          //  { to: "/docs/apps", label: "Tools", position: "left" },
+          //          { to: "/docs/guides", label: "Guides", position: "left" },
+          { to: "/docs/repo", label: "Repositories", position: "left" },
+
 
           //  { to: "/docs/gallery", label: "Gallery", position: "left" },
+          { to: "/blog", label: "Blog", position: "right" },
           {
             href: "https://www.koksmat.com",
             label: "Web",
@@ -102,10 +103,12 @@ const config = {
           {
             title: "Docs",
             items: [
-          {label:"Tags",
-        to:"/docs/tags"},
+              {
+                label: "Tags",
+                to: "/docs/tags"
+              },
 
-           
+
             ],
           },
 
@@ -123,7 +126,7 @@ const config = {
           //   ],
           // },
         ],
-       // copyright: `Copyright © ${new Date().getFullYear()} Niels Gregers Johansen and the Kronborg Foundation.`,
+        // copyright: `Copyright © ${new Date().getFullYear()} Niels Gregers Johansen and the Kronborg Foundation.`,
       },
       // prism: {
       //   theme: lightCodeTheme,
@@ -158,21 +161,21 @@ const config = {
             specPath: "https://magicbox.nexi-intra.com/openapi/exchange/openapi.json", // Path to designated spec file
             outputDir: "docs/api/exchange", // Output directory for generated .mdx docs
             sidebarOptions: {
-           //   groupPathsBy: "tag",
+              //   groupPathsBy: "tag",
             },
           },
           admin: {
             specPath: "https://magicbox.nexi-intra.com/openapi/admin/openapi.json", // Path to designated spec file
             outputDir: "docs/api/admin", // Output directory for generated .mdx docs
             sidebarOptions: {
-         //     groupPathsBy: "tag",
+              //     groupPathsBy: "tag",
             },
           },
           core: {
             specPath: "https://magicbox.nexi-intra.com/openapi/core/openapi.json", // Path to designated spec file
             outputDir: "docs/api/core", // Output directory for generated .mdx docs
             sidebarOptions: {
-          //    groupPathsBy: "tag",
+              //    groupPathsBy: "tag",
             },
           }
         }

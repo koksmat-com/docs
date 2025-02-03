@@ -58,6 +58,31 @@ if (Test-Path -Path $docsDir) {
     Remove-Item -Path $docsDir -Recurse -Force
   }
 }
+write-host "Copying images to" $docsDir
+# Define the File Extensions to Copy
+$extensions = "*.png", "*.gif", "*.jpg", "*.md", "*.mdx"
+
+# Retrieve and Copy the Files
+Get-ChildItem -Path $repodir -Recurse -Include $extensions -File | ForEach-Object {
+  # Determine the Relative Path of the File 
+  $relativePath = $_.FullName.Substring($repodir.Length).TrimStart('\')
+
+  # Determine the Destination Path
+  $destinationPath = Join-Path $docsDir $relativePath
+
+  # Get the Destination Directory Path
+  $destinationDir = Split-Path -Path $destinationPath -Parent
+
+  # Ensure the Destination Subdirectory Exists
+  if (!(Test-Path -Path $destinationDir)) {
+    New-Item -ItemType Directory -Path $destinationDir -Force | Out-Null
+    Write-Host "Created directory: $destinationDir"
+  }
+
+  # Copy the File to the Destination Path
+  Copy-Item -Path $_.FullName -Destination $destinationPath -Force -Verbose
+}
+
 
 # Process each run.ps1 file to create an individual Markdown file
 foreach ($script in $runScripts) {
@@ -197,7 +222,6 @@ foreach ($script in $runScripts) {
   $markdownFrontMatter = @"
 ---
 title: "$title"
-date: "$date"
 description: "$description"
 tags: [$tagsString]
 author: "$author"

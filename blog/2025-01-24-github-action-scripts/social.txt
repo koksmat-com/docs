@@ -1,0 +1,1 @@
+🚀 Excited to share my recent presentation on crafting action scripts that can be debugged locally & executed globally! 🌍 Dive into the world of GitHub Actions, Kubernetes, and streamlined workflows. Perfect for developers eager to level up their coding game! #GitHubActions #Kubernetes #CloudDevelopment
