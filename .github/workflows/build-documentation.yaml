@@ -20,7 +20,7 @@ jobs:
       WORKDIR: ${{ github.workspace }}
       DOC_REPO: ${{  github.event.inputs.repo }}
       DOC_ORG: ${{  github.event.inputs.organisation }}
-      GH_ORGANISATION_WIDE_READ_REPO: ${{ secrets.GH_TOKEN }}
+      GH_ORGANISATION_WIDE_READ_REPO: ${{ secrets.GH_ORGANISATION_WIDE_READ_REPO }}
 
     steps:
       - name: Check out repository
