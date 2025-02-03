@@ -19,7 +19,7 @@ function HomepageHeader() {
         <div className={styles.buttons}>
           <Link
             className="button button--secondary button--lg"
-            to="/docs/koksmat/ui/"
+            to="/docs"
           >
             Get started in 5min ⏱️
           </Link>
