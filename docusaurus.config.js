@@ -80,7 +80,7 @@ const config = {
         items: [
 
           //          { to: "/docs/guides", label: "Guides", position: "left" },
-          { to: "/docs/repo", label: "Repositories", position: "left" },
+          { to: "/docs/repo", label: "Automation Blocks", position: "left" },
 
 
           //  { to: "/docs/gallery", label: "Gallery", position: "left" },
